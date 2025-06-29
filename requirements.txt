@@ -43,7 +43,7 @@ decorator==5.2.1
 decord==0.6.0
 deepspeed==0.16.5
 defusedxml==0.7.1
--e git+https://github.com/facebookresearch/detectron2@400a49c1ec11a18dd25aea3910507bc3bcd15794#egg=detectron2
+# -e git+https://github.com/facebookresearch/detectron2@400a49c1ec11a18dd25aea3910507bc3bcd15794#egg=detectron2
 diffusers==0.32.2
 dill==0.3.8
 distro
@@ -79,7 +79,7 @@ idna
 imageio==2.37.0
 imageio-ffmpeg==0.6.0
 importlib_metadata==8.6.1
-iopath==0.1.10
+iopath==0.1.9
 ipykernel==6.29.5
 ipython==9.0.2
 ipython_pygments_lexers==1.1.1
@@ -131,7 +131,7 @@ ninja==1.11.1.4
 notebook==7.3.3
 notebook_shim==0.2.4
 numpy==1.26.4
-nvidia-cublas-cu12==12.4.5.8
+nvidia-cublas-cu12
 nvidia-cuda-cupti-cu12==12.1.105
 nvidia-cuda-nvrtc-cu12==12.1.105
 nvidia-cuda-runtime-cu12==12.1.105
