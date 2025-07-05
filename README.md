@@ -13,7 +13,6 @@
 <a href="https://vivocameraresearch.github.io/magictryon/"><img src='https://img.shields.io/badge/Project-Page-Green' alt='GitHub'></a>&nbsp;
 <a href="http://www.apache.org/licenses/LICENSE-2.0"><img src='https://img.shields.io/badge/License-CC BY--NC--SA--4.0-lightgreen?style=flat&logo=Lisence' alt='License'></a>&nbsp;
 
-
 **MagicTryOn** is a video virtual try-on framework based on a large-scale video diffusion Transformer. ***1) It adopts Wan2.1 diffusion Transformer as the backbone*** and ***2) employs full self-attention to model spatiotemporal consistency***. ***3) A coarse-to-fine garment preservation strategy is introduced, along with a mask-aware loss to enhance garment region fidelity***.
 <div align="center">
   <img src="asset/model.png" width="100%" height="100%"/>
@@ -51,6 +50,13 @@ cd Magic-TryOn
 HF_ENDPOINT=https://hf-mirror.com huggingface-cli download LuckyLiGY/MagicTryOn --local-dir ./weights/MagicTryOn_14B_V1
 ```
 
+### Or Docker
+
+```sh
+sudo docker build . -t magictryon
+sudo docker run --gpus all -it magictryon bash
+```
+
 ## 😉 Demo Inference
 ### 1. Image TryOn
 You can directly run the following command to perform image try-on demo. If you want to modify some inference parameters, please make the changes inside the `predict_image_tryon_up.py` file.
@@ -78,13 +84,13 @@ Before performing customized try-on, you need to complete the following five ste
     ```
 
 2. **Cloth Line Map**  
-   Extract the structural lines or sketch of the garment using [**AniLines-Anime-Lineart-Extractor**](https://github.com/zhenglinpan/AniLines-Anime-Lineart-Extractor). Download the pre-trained models from this [**link**](https://drive.google.com/file/d/1oazs4_X1Hppj-k9uqPD0HXWHEQLb9tNR/view?usp=sharing) and put them in the `inference/customize/AniLines/weights` folder.
+   Extract the structural lines or sketch of the garment using [**AniLines-Anime-Lineart-Extractor**](https://github.com/zhenglinpan/AniLines-Anime-Lineart-Extractor). Download the pre-trained models from this [**link**](https://github.com/dvorakchen/Magic-TryOn-Assets/releases/download/0.0.1/detail.pth) and put them in the `/weights` folder.
    ```PowerShell
-    python inference/customize/AniLines/infer.py --dir_in datasets/garment/vivo/vivo_garment --dir_out datasets/garment/vivo/vivo_garment_anilines --mode detail --binarize -1 --fp16 True --device cuda:1
+    python inference/customize/AniLines/infer.py --dir_in datasets/garment/vivo/vivo_garment --dir_out datasets/garment/vivo/vivo_garment_anilines --mode detail --binarize -1 --fp16 True --device cuda:0
     ```
 
 3. **Mask**  
-   Generate the agnostic mask of the garment, which is essential for region control during try-on. Please [**download**](https://drive.google.com/file/d/1E2JC_650g69AYrN2ZCwc8oz8qYRo5t5s/view?usp=sharing) the required checkpoint for obtaining the agnostic mask. The checkpoint needs to be placed in the `inference/customize/gen_mask/ckpt` folder.
+   Generate the agnostic mask of the garment, which is essential for region control during try-on. Please [**download**](https://github.com/dvorakchen/Magic-TryOn-Assets/releases/download/v0.0.2/gen_mask_ckpt.zip) the required checkpoint for obtaining the agnostic mask. The checkpoint needs to be unzip annd put the `ckpt` folder placed in the `inference/customize/gen_mask/ckpt` folder.
 
    (1) You need to rename your video to `video.mp4`, and then construct the folders according to the following directory structure.
     ```
