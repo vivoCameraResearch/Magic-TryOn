@@ -16,6 +16,7 @@
 ![method](asset/model.png)
 
 ## 📣 News 
+- **`2026/04/19`**: 🎉 We have updated the MagicTryOn-Trubo 🤗[**HuggingFace**](https://huggingface.co/LuckyLiGY/MagicTryOn-Turbo).
 - **`2025/12/26`**: 🎉 We have updated the MagicTryOn-1.3B 🤗[**HuggingFace**](https://huggingface.co/LuckyLiGY/MagicTryOn-1.3B).
 - **`2025/06/09`**: 🎉 We are excited to announce that the ***code*** of [**MagicTryOn**](https://github.com/vivoCameraResearch/Magic-TryOn/) have been released! Check it out! ***The weights are released ！！！***. You can download the weights from 🤗[**HuggingFace**](https://huggingface.co/LuckyLiGY/MagicTryOn).
 - **`2025/05/27`**: Our [**Paper on ArXiv**](https://arxiv.org/abs/2505.21325v2) is available 🥳!
@@ -25,7 +26,7 @@
 - ✅ Release the inference demo and 14B pretrained weights
 - ✅ Release the customized try-on utilities
 - ✅ Release the MagicTryOn-1.3B weights 
-- [  ] Release the MagicTryOn-Turbo
+- ✅ Release the MagicTryOn-Turbo
 
 ## 🤝 Community Support
 The current version of MagicTryOn is trained on public datasets including VITON-HD, DressCode, and ViViD. If the community is interested in training MagicTryOn on in-the-wild datasets to better support real-world virtual try-on scenarios, please feel free to contact us. We are happy to provide the corresponding training scripts.
