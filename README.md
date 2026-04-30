@@ -66,6 +66,10 @@ CUDA_VISIBLE_DEVICES=0 python inference/video_tryon/predict_video_tryon_up.py
 
 CUDA_VISIBLE_DEVICES=1 python inference/video_tryon/predict_video_tryon_low.py
 ```
+Turbo 
+```PowerShell
+CUDA_VISIBLE_DEVICES=0 python turbo_inference/bidirectional_inference_vivid.py --config_path configs/wan_bidirectional_dmd_from_scratch.yaml --checkpoint_folder ///model.pt  --output_folder result/tryon
+```
 
 ### 3. Customize TryOn
 Before performing customized try-on, you need to complete the following five steps to obtain:
@@ -132,11 +136,6 @@ Before performing customized try-on, you need to complete the following five ste
 After completing the above steps, run the `image2video.py` file to generate the required customized videos: `mask.mp4`, `agnostic.mp4`, and `densepose.mp4`. Then, run the following command:
 ```PowerShell
 CUDA_VISIBLE_DEVICES=0 python inference/video_tryon/predict_video_tryon_customize.py
-```
-
-### 2. Turbo 
-```PowerShell
-CUDA_VISIBLE_DEVICES=0 python turbo_inference/bidirectional_inference_vivid.py --config_path configs/wan_bidirectional_dmd_from_scratch.yaml --checkpoint_folder ///model.pt  --output_folder result/tryon
 ```
 
 ## 😘 Acknowledgement
