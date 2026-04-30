@@ -134,6 +134,11 @@ After completing the above steps, run the `image2video.py` file to generate the 
 CUDA_VISIBLE_DEVICES=0 python inference/video_tryon/predict_video_tryon_customize.py
 ```
 
+### 2. Turbo 
+```PowerShell
+CUDA_VISIBLE_DEVICES=0 python turbo_inference/bidirectional_inference_vivid.py --config_path configs/wan_bidirectional_dmd_from_scratch.yaml --checkpoint_folder ///model.pt  --output_folder result/tryon
+```
+
 ## 😘 Acknowledgement
 Our code is modified based on [VideoX-Fun](https://github.com/aigc-apps/VideoX-Fun/tree/main). We adopt [Wan2.1-I2V-14B](https://github.com/Wan-Video/Wan2.1) as the base model. We use [SCHP](https://github.com/GoGoDuck912/Self-Correction-Human-Parsing/tree/master), [openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose), and [DensePose](https://github.com/facebookresearch/DensePose) to generate masks. We use [detectron2](https://github.com/facebookresearch/detectron2) to generate densepose. We use [Qwen/Qwen2.5-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct) to generate the cloth caption and [AniLines-Anime-Lineart-Extractor](https://github.com/zhenglinpan/AniLines-Anime-Lineart-Extractor) to obtain the cloth line map. Thanks to all the contributors!
 
